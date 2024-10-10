@@ -1,0 +1,27 @@
+[package]
+name = "tree-sitter-weidu"
+description = "Parser for weidu baldur's gate mod langauge"
+version = "0.1.0"
+authors = ["dark0dave <dark0dave@mykolab.com>"]
+license = "GPLv3"
+readme = "README.md"
+keywords = ["incremental", "parsing", "tree-sitter", "weidu"]
+categories = ["parsing", "text-editors"]
+repository = "https://github.com/dark0dave/tree-sitter-weidu"
+edition = "2021"
+autoexamples = false
+
+build = "bindings/rust/build.rs"
+include = ["bindings/rust/*", "grammar.js", "queries/*", "src/*"]
+
+[lib]
+path = "bindings/rust/lib.rs"
+
+[dependencies]
+tree-sitter-language = "0.1"
+
+[build-dependencies]
+cc = "1.1.22"
+
+[dev-dependencies]
+tree-sitter = "0.24.3"
